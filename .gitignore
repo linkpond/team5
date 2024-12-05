@@ -3,7 +3,8 @@
 
 # properties
 *.properties
-
+.classpath
+target/
 ### Eclipse ###
 .metadata
 bin/
