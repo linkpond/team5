@@ -16,6 +16,7 @@ import lombok.ToString;
 @ToString
 @Builder
 @Entity
+@NoArgsConstructor
 public class Emp {
 	@Id
 	@Column(name = "empno")
