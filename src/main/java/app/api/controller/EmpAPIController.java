@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.entity.Dept;
@@ -34,13 +35,13 @@ public class EmpAPIController {
 		return emps;
 	}
 
-	@GetMapping("/api/emp/{empno}")
+	@GetMapping("/emp/{empno}")
 	public Emp getEmpById(@PathVariable Integer empno) {
 		 return empRepository.findById(empno)
 		            .orElseThrow(() -> new EntityNotFoundException("empno: " + empno + "를 찾을 수 없습니다"));
 	}
 	
-  @PostMapping("/api/emp")
+  @PostMapping("/emp")
 	public EmpDto registerEmp(@RequestBody EmpDto newEmp) {
 
 		Dept dept = deptRepository.findById(newEmp.getDeptno()).orElseThrow(null);
