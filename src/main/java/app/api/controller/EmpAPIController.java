@@ -1,5 +1,6 @@
 package app.api.controller;
 
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.repository.EmpRepository;
@@ -10,6 +11,5 @@ import lombok.RequiredArgsConstructor;
 public class EmpAPIController {
 
 	private final EmpRepository empRepository;
-	
-	
+
 }
